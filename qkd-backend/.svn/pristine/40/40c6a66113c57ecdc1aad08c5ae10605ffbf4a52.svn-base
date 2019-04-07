@@ -1,0 +1,70 @@
+package net.it691team1.qkdbackend.core;
+
+import javax.jws.WebMethod;
+
+import net.it691team1.qkdbackend.dto.EqualBits;
+import net.it691team1.qkdbackend.dto.MatchBits;
+
+public class QKEndpointImpl implements QKEndpoint {
+
+	public QKEndpointImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@WebMethod
+	public char[] getInputFiltersVector(String filters) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@WebMethod
+	public char[] getfilterSets(char[] alicesFilters) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@WebMethod
+	public int[] getBitsVector(char[] alicesFilters) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@WebMethod
+	public char[] genFilters(int N) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@WebMethod
+	public char[] evesFilterFixup(char[] alicesFilters, char[] evesFilters) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@WebMethod
+	public char[] filterMatch(char[] alicesFilters, char[] BobsFilters) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@WebMethod
+	public char[] filterSetMatch(char[] alicesFilterSets, char[] bobsFilterSets) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@WebMethod
+	public MatchBits bitsAfterMatch(char[][] alicesFilters, char[][] bobsFilters,
+			char[] setMatches, int[] finalBitsSlots) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@WebMethod
+	public EqualBits bitsEqualTest(int[] finalBitsSlots, int[] bitsVector,
+			int[] FinalBits) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

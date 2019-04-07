@@ -1,0 +1,56 @@
+package net.it691team1.qkdbackend.dto;
+
+import java.sql.Date;
+
+public class SuiteSimulatorDto {
+	private int suiteId;
+	private int simNum;
+	private Date startT;
+	private Date endT;
+	private SimulatorDto[] sims;
+	
+	public SuiteSimulatorDto() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getSuiteId() {
+		return suiteId;
+	}
+
+	public void setSuiteId(int suiteId) {
+		this.suiteId = suiteId;
+	}
+
+	public int getSimNum() {
+		return simNum;
+	}
+
+	public void setSimNum(int simNum) {
+		this.simNum = simNum;
+	}
+
+	public Date getStartT() {
+		return startT;
+	}
+
+	public void setStartT(Date startT) {
+		this.startT = startT;
+	}
+
+	public Date getEndT() {
+		return endT;
+	}
+
+	public void setEndT(Date endT) {
+		this.endT = endT;
+	}
+	
+	public void setSims(SimulatorDto[] s){
+		this.sims = s;
+	}
+	
+	public SimulatorDto[] getSims(){
+		return this.sims;
+	}
+
+}

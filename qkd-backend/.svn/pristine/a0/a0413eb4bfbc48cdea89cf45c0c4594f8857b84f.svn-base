@@ -1,0 +1,16 @@
+package net.it691team1.qkdbackend.core;
+
+import javax.xml.ws.Endpoint;
+
+public class QKPublisher {
+
+	public QKPublisher() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public static void main(String[] args) {
+		   Endpoint.publish("/QKEndpoint", new QKEndpointImpl());
+	    }
+
+
+}

@@ -1,0 +1,128 @@
+package net.it691team1.qkdbackend.core;
+
+import java.sql.Date;
+import java.sql.ResultSet;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.jws.soap.SOAPBinding.Style;
+
+import net.it691team1.qkdbackend.dao.SimulatorDao;
+import net.it691team1.qkdbackend.dto.EqualBits;
+import net.it691team1.qkdbackend.dto.MatchBits;
+import net.it691team1.qkdbackend.dto.SimulatorDto;
+ 
+/**
+ * Interface for the soap methods for the backend. 
+ * @author Jay
+ *
+ */
+@WebService
+@SOAPBinding(style = Style.RPC)
+public interface QKEndpoint{
+	/**
+	 * Converts a sting into an array
+	 * @param filters
+	 * @return char [] filters
+	 */
+	@WebMethod char [] getInputFiltersVector(String filters);
+	
+	/**
+	 * Gets filter sets based on an input array (filter vector)
+	 * @param alicesFilters
+	 * @return char [] ilterSet
+	 */
+	@WebMethod char[] getfilterSets (char [] alicesFilters);
+	
+	/**
+	 * Gets a filter set vector from a filter vector
+	 * @param alicesFilters
+	 * @return int [] bitsVector
+	 */
+	@WebMethod int [] getBitsVector (char[] alicesFilters);
+	
+	/**
+	 * Generates a random filter set of length N
+	 * @param N
+	 * @return char [] filterSet
+	 */
+	@WebMethod char [] genFilters(int N);
+	
+	/**
+	 * Generates the set of filters eve would send to Bob, only null bits are known
+	 * the rest are random.
+	 * @param alicesFilters
+	 * @param evesFilters
+	 * @return char [] filters
+	 */
+	@WebMethod char [] evesFilterFixup(char[] alicesFilters, char[] evesFilters);
+	
+	/**
+	 * Checks two filter sets to see if they match returning a Y/N flag
+	 * @param alicesFilters
+	 * @param BobsFilters
+	 * @return char [] filterMatch
+	 */
+	@WebMethod char [] filterMatch(char alicesFilters[], char BobsFilters[]);
+	
+	/**
+	 * Checks to see if the correct Filter set was used
+	 * @param alicesFilterSets
+	 * @param bobsFilterSets
+	 * @return char [] filterSets
+	 */
+	@WebMethod char [] filterSetMatch(char [] alicesFilterSets, char [] bobsFilterSets);
+	
+	/**
+	 * Checks for matched bits given two fitler sets, a match set and the slot locations
+	 * of the bits
+	 * @param alicesFilters
+	 * @param bobsFilters
+	 * @param setMatches
+	 * @param finalBitsSlots
+	 * @return MatchBits matchedBits
+	 */
+	@WebMethod MatchBits bitsAfterMatch (char [] alicesFilters[], char [] bobsFilters[],
+			                             char [] setMatches,  int[] finalBitsSlots);
+	
+	/**
+	 * Checks for equal bits vs expected equal bits
+	 * @param finalBitsSlots
+	 * @param bitsVector
+	 * @param FinalBits
+	 * @return EqualBits equalBits
+	 */
+	@WebMethod EqualBits bitsEqualTest  (int  [] finalBitsSlots, int  [] bitsVector, 
+			                             int  [] FinalBits);
+	
+	/**
+	 * Create a new test Suite
+	 * @param numTests
+	 * @return suite_id
+	 */
+	@WebMethod int createSuite (int numTests);
+	
+	/**
+	 * Updates the completion time when the test pack is complete
+	 * @param suiteId
+	 * @return boolean success 
+	 */
+	@WebMethod boolean completeSuite (int suiteId);
+	
+	/**
+	 * Insets a new test given a SimulatorDto Object
+	 * @param test
+	 * @return int testId
+	 */
+	@WebMethod int insertTest (SimulatorDto test);
+	
+	/**
+	 * Returns a result set given a Doa object
+	 * @param test
+	 * @return ResultSet
+	 */
+	@WebMethod ResultSet queryTestHisotry (SimulatorDao test);
+	
+	
+}

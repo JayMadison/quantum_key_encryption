@@ -1,0 +1,23 @@
+package net.it691team1.qkdbackend.dao.impl;
+
+import net.it691team1.qkdbackend.core.SimulatorSearch;
+import net.it691team1.qkdbackend.dao.SimulatorDao;
+import net.it691team1.qkdbackend.dto.SimulatorDto;
+
+public class SimulatorDaoImpl implements SimulatorDao {
+
+	public SimulatorDaoImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int insertSim(SimulatorDto sim) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public SimulatorDto getSim(SimulatorSearch search) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

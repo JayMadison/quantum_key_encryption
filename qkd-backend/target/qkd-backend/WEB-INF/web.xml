@@ -1,0 +1,31 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <listener>
+        <listener-class>
+                com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+        </listener-class>
+    </listener>
+  <display-name>QKD Simulator</display-name>
+  <servlet>
+  	<servlet-name>QKServer</servlet-name>
+  	<servlet-class>net.it691team1.qkdbackend.core.QKServer</servlet-class>
+  </servlet>
+      <servlet>
+        <servlet-name>QKEndpoint</servlet-name>
+        <servlet-class>
+        	com.sun.xml.ws.transport.http.servlet.WSServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QKEndpoint</servlet-name>
+        <url-pattern>/QKEndpoint</url-pattern>
+    </servlet-mapping><servlet-mapping>
+  	<servlet-name>QKServer</servlet-name>
+  	<url-pattern>/QKServer</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

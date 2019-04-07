@@ -1,0 +1,13 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>A simple example</title>
+</head>
+<body>
+  <form action="http://dev.it691team1.net:8080/qkd-backend/QKServer" method = "post">
+    Enter Filter (using |-/\ only): <input type="text" name="filter"><br>
+    Enter Eve's Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="eve"><br>
+	<input type="submit" value="Click to submit">
+  </form>
+</body>
+</html>

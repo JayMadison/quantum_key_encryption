@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints
+  xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+  version="2.0">
+  <endpoint
+      name="QKEndpoint"
+      implementation="net.it691team1.net.qkdbackend.core.QKendpintImpl"
+      url-pattern="/QKEndpoint"/>
+</endpoints>
